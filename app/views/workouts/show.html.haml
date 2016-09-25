@@ -5,6 +5,13 @@
   %p= @workout.energy
   %p= @workout.length
 
-= link_to "Main Page", root_path |
-= link_to "Edit", edit_workout_path(@workout)
-=link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Not cool?" }
+#goals
+  %h2 Goals
+  = render @workout.goals
+
+  %h3 Add a new goal
+  = render "goals/form"
+
+  = link_to "Main Page", root_path |
+  = link_to "Edit", edit_workout_path(@workout)
+  =link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Not cool?" }
